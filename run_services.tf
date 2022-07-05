@@ -12,7 +12,7 @@ resource "docker_image" "mysql" {
 }
 
 resource "docker_image" "web_demo" {
-  name = "mmmakarets/web-demo:1.1.0"
+  name = "mmmakarets/web-demo:1.1.1"
 }
 
 resource "docker_network" "web_demo" {
@@ -24,6 +24,11 @@ resource "docker_container" "web" {
   image = "${docker_image.web_demo.latest}"
   name  = "web"
   restart = "always"
+  mounts {
+    source = "/home/mmmakarets/demo/html"
+    target = "/var/www/html"
+    type = "bind"
+}
   networks_advanced {
     name = docker_network.web_demo.name
     aliases = ["web-demo-net"]

@@ -5,4 +5,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: mmmakarets/web-demo:1.1.0
+    image: mmmakarets/web-demo:1.1.1
