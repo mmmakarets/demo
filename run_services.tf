@@ -12,7 +12,7 @@ resource "docker_image" "mysql" {
 }
 
 resource "docker_image" "web_demo" {
-  name = "mmmakarets/web-demo:1.1.1"
+  name = "mmmakarets/web-demo:1.1.4"
 }
 
 resource "docker_network" "web_demo" {
